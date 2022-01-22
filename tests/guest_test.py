@@ -15,12 +15,12 @@ class TestGuest(unittest.TestCase):
         self.assertEqual(100, self.guest.wallet)
     
     def test_guest_checks_in_returns_1(self):
-        room = Room("01")
+        room = Room("01", 2)
         room.check_in_guest(self.guest)
         self.assertEqual(1, room.count_guests(room.guests))
     
     def test_guest_checks_out_returns_0(self):
-        room = Room("01")
+        room = Room("01", 2)
         guest = Guest("Mario", 100)
         room.check_in_guest(guest)
         room.check_out_guest()
